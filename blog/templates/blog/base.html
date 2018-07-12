@@ -1,40 +1,25 @@
 {% load staticfiles %}
 <html>
     <head>
-    	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <title>Sum</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-        <link href="https://fonts.google.com/specimen/Josefin+Sans" rel="stylesheet" type="text/css">
-        <title>SuM</title>
     </head>
-<body>
-    <div class="page-header">
-        <h1><a href="/">Sum controller</a></h1>
-    </div>
-    <div class="content container">
-        <div class="row">
-            <div class="col-md-8">
-            {% extends 'blog/base.html' %}
-            {% block content %}
-            {% for post in posts %}
-                <div class="post">
-                    <div class="date">
-                        <p>published: 09.07.2018, 18:20</p>
+    <body>
+        <div class="page-header">
+            <h1><a href="/">Sum controller</a></h1>
+        </div>
+
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
                     </div>
-                    <h2><a href="">Where you are</a></h2>
-                    <p>Kwangju Seoul</p>
+                {% block content %}
+                {% endblock %}
                 </div>
-            <div class="post">
-                <div class="date">
-                <p>published: 09.07.2018, 18:20</p>
-                </div>
-                <h2><a href="">Power control</a></h2>
-                <p>off low medium high</p>
-            </div>
-            {% endfor %}
-            {% endblock %}
             </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
