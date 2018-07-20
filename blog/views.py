@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from .models import Post
 from .forms import PostForm
+from django.contrib.auth.models import User
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -28,7 +29,6 @@ def post_edit(request, pk):
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
             post = form.save(commit=False)
-            post.author = request.user
             post.published_date = timezone.now()
             post.save()
             return redirect('post_detail', pk=post.pk)
